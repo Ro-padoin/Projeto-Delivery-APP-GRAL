@@ -118,10 +118,10 @@ A ideia da sua equipe já pressupõe alguma escalabilidade, dado que foram estab
 
 Desenvolvido em grupo por:
 
-Guilherme Hallmann <br/>
-Rosalia Oliveira <br/>
-Ariante Ueti <br/>
-Lucas Junqueira <br/>
+`G`uilherme Hallmann <br/>
+`R`osalia Oliveira <br/>
+`A`riante Ueti <br/>
+`L`ucas Junqueira <br/>
 
 <br/>
 
