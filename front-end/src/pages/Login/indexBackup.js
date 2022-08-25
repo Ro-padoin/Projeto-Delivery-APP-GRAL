@@ -96,7 +96,6 @@ function Login() {
               <button
                 className="to-register-button"
                 type="button"
-                data-testid="common_login__button-register"
                 onClick={ () => navigate('/register') }
               >
                 Criar nova conta
@@ -113,7 +112,6 @@ function Login() {
                 <input
                   className="input-login"
                   type="text"
-                  data-testid="common_login__input-email"
                   name="email"
                   value={ Login.email }
                   onChange={ handleChange }
@@ -130,7 +128,6 @@ function Login() {
                 <input
                   className="input-login"
                   type="password"
-                  data-testid="common_login__input-password"
                   name="password"
                   value={ Login.password }
                   onChange={ handleChange }
@@ -143,7 +140,6 @@ function Login() {
                 style={ { backgroundColor: '#1a1940' } }
                 className={ isDisabled ? 'btn-login-disabled' : 'btn-login' }
                 type="button"
-                data-testid="common_login__button-login"
                 disabled={ isDisabled }
                 onClick={ handleClickLogin }
               >

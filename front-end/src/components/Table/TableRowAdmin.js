@@ -4,37 +4,21 @@ import React from 'react';
 import Button from '../Button';
 
 function TableRowAdmin(props) {
-  const { user, index, removeUserFn } = props;
+  const { user, removeUserFn } = props;
 
   return (
     <tr className="table-row">
-      {/* <td
-        data-testid={ `admin_manage__element-user-table-item-number-${index}` }
-        className="px-2 py-4"
-      >
-        { index }
-      </td> */}
-      <td
-        data-testid={ `admin_manage__element-user-table-name-${index}` }
-        className="px-2 py-4"
-      >
+      <td className="px-2 py-4">
         { user.name }
       </td>
-      <td
-        data-testid={ `admin_manage__element-user-table-email-${index}` }
-        className="px-2 py-4"
-      >
+      <td className="px-2 py-4">
         { user.email }
       </td>
-      <td
-        data-testid={ `admin_manage__element-user-table-role-${index}` }
-        className="px-2 py-4"
-      >
+      <td className="px-2 py-4">
         { user.role }
       </td>
       <td className="px-2 py-4">
         <Button
-          dataTestid={ `admin_manage__element-user-table-remove-${user.id - 1}` }
           onClickfn={ () => removeUserFn(user.id) }
           classNameBtn="remove-button"
         >

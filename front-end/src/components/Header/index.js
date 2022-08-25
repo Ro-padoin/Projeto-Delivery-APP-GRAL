@@ -29,7 +29,6 @@ function Header() {
 
             <Link
               to="/customer/products"
-              data-testid="customer_products__element-navbar-link-products"
               className="navbar-link group"
             >
               Produtos
@@ -41,7 +40,6 @@ function Header() {
 
             <Link
               to="/customer/orders"
-              data-testid="customer_products__element-navbar-link-orders"
               className="navbar-link group"
             >
               Meus Pedidos
@@ -53,7 +51,6 @@ function Header() {
 
             <Link
               to="/seller/orders"
-              data-testid="customer_products__element-navbar-link-orders"
               className="navbar-link group"
             >
               Meus Pedidos
@@ -64,7 +61,6 @@ function Header() {
         </section>
         <section className="navbar-elements">
           <Span
-            dataTestid="customer_products__element-navbar-user-full-name"
             spanClass="navbar-name"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -74,7 +70,6 @@ function Header() {
           </Span>
           <Link
             to="/login"
-            data-testid="customer_products__element-navbar-link-logout"
             onClick={ clearStorage }
             className="flex items-center gap-1 hover:text-[#F2C12E] ease-in-out duration-300"
           >

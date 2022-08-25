@@ -32,18 +32,16 @@ function Card(props) {
         src={ image }
         alt="product-card"
         className="card-image"
-        data-testid={ `customer_products__img-card-bg-image-${id}` }
       />
       <section className="product-card-bottom">
-        <Span dataTestid={ `customer_products__element-card-title-${id}` }>{title}</Span>
-        <Span dataTestid={ `customer_products__element-card-price-${id}` }>
+        <Span>{title}</Span>
+        <Span>
           R$:
           { ' ' }
           {priceFormat}
         </Span>
         <section className="product-card-bottom-buttons">
           <Button
-            dataTestid={ `customer_products__button-card-rm-item-${id}` }
             onClickfn={ () => updateItemValue(itemValue - 1) }
             classNameBtn="product-card-button"
           >
@@ -54,14 +52,12 @@ function Card(props) {
           <Input
             inputClass="product-card-input"
             type="number"
-            dataTestid={ `customer_products__input-card-quantity-${id}` }
             name="quantity"
             value={ itemValue }
             onChangefn={ ({ target: { value } }) => { updateItemValue(value); } }
             labelText=""
           />
           <Button
-            dataTestid={ `customer_products__button-card-add-item-${id}` }
             onClickfn={ () => updateItemValue(itemValue + 1) }
             classNameBtn="product-card-button"
           >

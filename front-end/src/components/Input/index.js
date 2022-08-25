@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Input({
-  dataTestid,
   labelText,
   name,
   onChangefn,
@@ -19,7 +18,6 @@ function Input({
         className={ inputClass }
         id={ name }
         type={ type }
-        data-testid={ dataTestid }
         name={ name }
         value={ value }
         onChange={ onChangefn }
@@ -29,7 +27,6 @@ function Input({
 }
 
 Input.propTypes = {
-  dataTestid: PropTypes.string,
   labelText: PropTypes.string,
   name: PropTypes.string,
   onChangefn: PropTypes.func,

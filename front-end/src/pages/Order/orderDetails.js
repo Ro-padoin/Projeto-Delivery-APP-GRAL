@@ -21,7 +21,7 @@ function OrderDetails() {
         .get(`/sale_products/${id}/search?key=id`, config);
       setOrder(data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, [id]);
 
@@ -76,14 +76,12 @@ function OrderDetails() {
         </table>
         {sale && (
           <Span
-            dataTestid="customer_order_details__element-order-total-price"
             spanClass="order-details-total"
           >
             Total R$:
             {' '}
             { (sale[0].totalPrice).toString().replace('.', ',') }
           </Span>)}
-
       </section>
     </section>
   );

@@ -11,36 +11,21 @@ function TableRow(props) {
   return (
     <tbody>
       <tr key={ id } className="table-row">
-        <td
-          data-testid={ `customer_checkout__element-order-table-item-number-${index}` }
-          className="px-2 py-4"
-        >
+        <td className="px-2 py-4">
           { index + 1 }
         </td>
-        <td
-          data-testid={ `customer_checkout__element-order-table-name-${index}` }
-          className="px-2 py-4"
-        >
+        <td className="px-2 py-4">
           {title }
         </td>
-        <td
-          data-testid={ `customer_checkout__element-order-table-quantity-${index}` }
-          className="px-2 py-4"
-        >
+        <td className="px-2 py-4">
           { quantity }
         </td>
-        <td
-          data-testid={ `customer_checkout__element-order-table-unit-price-${index}` }
-          className="px-2 py-4"
-        >
+        <td className="px-2 py-4">
           R$
           { ' ' }
           { price }
         </td>
-        <td
-          data-testid={ `customer_checkout__element-order-table-sub-total-${index}` }
-          className="px-2 py-4"
-        >
+        <td className="px-2 py-4">
           R$
           { ' ' }
           { subTotal}
@@ -48,7 +33,6 @@ function TableRow(props) {
         {!showRemoveBtn && (
           <td className="px-2 py-4">
             <Button
-              dataTestid={ `customer_checkout__element-order-table-remove-${index}` }
               onClickfn={ () => updateCartItem(props, 0) }
               classNameBtn="remove-button"
             >

@@ -13,22 +13,22 @@ function OrderCard({ id, orderStatus, orderDate, price }) {
   return (
     <Link to={ `/customer/orders/${id}` }>
       <section className="order-card">
-        <Span dataTestid={ `customer_orders__element-order-id-${id}` } spanClass="bg-[#F2C12E] p-5 rounded-md">
+        <Span spanClass="bg-[#F2C12E] p-5 rounded-md">
           Pedido
           {' '}
           { id }
         </Span>
-        <Span dataTestid={ `customer_orders__element-delivery-status-${id}` } spanClass={ statusStyle }>
+        <Span spanClass={ statusStyle }>
           { orderStatus }
         </Span>
         <section className="card-date-price">
-          <Span dataTestid={ `customer_orders__element-order-date-${id}` }>
+          <Span>
             { orderDate }
           </Span>
           <Span>
             R$:
             {' '}
-            <Span dataTestid={ `customer_orders__element-card-price-${id}` }>
+            <Span>
               { price }
             </Span>
           </Span>

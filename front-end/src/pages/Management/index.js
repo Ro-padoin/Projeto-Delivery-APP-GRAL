@@ -60,7 +60,7 @@ function Management() {
       const newData = userCreated.filter((element) => element.id !== id);
       setUserCreated(newData);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
   useEffect(() => checkRegistrationData(), [checkRegistrationData]);
@@ -72,7 +72,6 @@ function Management() {
         <section className="admin-form">
           <Input
             type="name"
-            dataTestid="admin_manage__input-name"
             name="name"
             value={ registration.name }
             onChangefn={ handleChange }
@@ -81,7 +80,6 @@ function Management() {
           />
           <Input
             type="email"
-            dataTestid="admin_manage__input-email"
             name="email"
             value={ registration.email }
             onChangefn={ handleChange }
@@ -90,7 +88,6 @@ function Management() {
           />
           <Input
             type="password"
-            dataTestid="admin_manage__input-password"
             name="password"
             value={ registration.password }
             onChangefn={ handleChange }
@@ -101,7 +98,6 @@ function Management() {
             Tipo:
             {' '}
             <select
-              data-testid="admin_manage__select-role"
               name="role"
               id="role"
               value={ registration.role }
@@ -119,7 +115,6 @@ function Management() {
             </select>
           </label>
           <Button
-            dataTestid="admin_manage__button-register"
             onClickfn={ () => handleRegister() }
             disabled={ isDisabled }
             classNameBtn="btn-login"
@@ -131,11 +126,10 @@ function Management() {
           <table className="table-auto text-center">
             <thead>
               <tr>
-                {/* <th data-testid="admin_manage__element-user-table-item-number-" className="table-headers-admin">(index)</th> */}
-                <th data-testid="admin_manage__element-user-table-name-" className="table-headers-admin">Nome</th>
-                <th data-testid="admin_manage__element-user-table-email-" className="table-headers-admin">Email</th>
-                <th data-testid="admin_manage__element-user-table-role-" className="table-headers-admin">Atribuição</th>
-                <th data-testid="admin_manage__element-user-table-remove-" className="table-headers-admin">Excluir</th>
+                <th className="table-headers-admin">Nome</th>
+                <th className="table-headers-admin">Email</th>
+                <th className="table-headers-admin">Atribuição</th>
+                <th className="table-headers-admin">Excluir</th>
               </tr>
             </thead>
             <tbody>
@@ -150,9 +144,7 @@ function Management() {
           </table>
         </section>
       </section>
-      { errorDB && (
-        <Span dataTestid="admin_manage__element-invalid-register">{errorDB}</Span>
-      )}
+      { errorDB && <Span>{errorDB}</Span> }
     </section>
   );
 }

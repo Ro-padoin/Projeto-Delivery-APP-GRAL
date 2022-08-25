@@ -18,7 +18,7 @@ function Order() {
         .get(`/sales/${userData.id}/user_id`, config);
       setOrders(data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, [setOrders]);
 

@@ -23,7 +23,7 @@ function SellerDetails() {
         .get(`/sale_products/${id}/search?key=id`, config);
       setOrder(data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }, [id]);
 
@@ -75,7 +75,6 @@ function SellerDetails() {
         </table>
         {sale && (
           <Span
-            dataTestid="seller_order_details__element-order-total-price"
             spanClass="order-details-total"
           >
             Total R$:

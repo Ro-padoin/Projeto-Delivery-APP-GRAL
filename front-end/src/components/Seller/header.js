@@ -7,12 +7,13 @@ import axiosInstance from '../../utils/axios/axiosInstance';
 function SellerOrdersHeader({ orderNum, orderDate, orderStatus }) {
   const { id } = useParams();
   const [btnStatus, setBtnStatus] = useState(orderStatus);
+
   const updateStatus = async (status) => {
     try {
       await axiosInstance
         .patch(`/sales/search?id=${id}&key=id&value=${status}`);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
   const deliveryStatus = 'Em Trânsito';
@@ -20,20 +21,17 @@ function SellerOrdersHeader({ orderNum, orderDate, orderStatus }) {
     <thead>
       <tr>
         <th
-          data-testid="seller_order_details__element-order-details-label-order-id"
           className="order-details-header"
         >
           { orderNum }
         </th>
 
         <th
-          data-testid="seller_order_details__element-order-details-label-order-date"
           className="order-details-header"
         >
           { orderDate }
         </th>
         <th
-          data-testid="seller_order_details__element-order-details-label-delivery-status"
           className="order-details-header"
         >
           { btnStatus }
@@ -41,7 +39,6 @@ function SellerOrdersHeader({ orderNum, orderDate, orderStatus }) {
 
         <th className="order-details-header">
           <Button
-            dataTestid="seller_order_details__button-preparing-check"
             classNameBtn="order-header-button"
             disabled={
               btnStatus === 'Preparando'
@@ -59,7 +56,6 @@ function SellerOrdersHeader({ orderNum, orderDate, orderStatus }) {
 
         <th className="order-details-header">
           <Button
-            dataTestid="seller_order_details__button-dispatch-check"
             classNameBtn="order-header-button"
             disabled={
               btnStatus === 'Pendente'

@@ -1,6 +1,6 @@
 const md5 = require('md5');
 const { User } = require('../database/models');
-const errorThrow = require('../utils/errorThrow');
+const createExceptionMessage = require('../utils/exceptionMessage');
 
 const getUserByEmail = async (email) => {
   const userByEmail = await User.findOne({ where: { email } });
@@ -30,11 +30,10 @@ const createNewUser = async (data) => {
 const createNewRegistration = async (userToken, data) => {
   const { name, email, password, role } = data;
   if (!userToken || userToken.payload.role !== 'administrator') {
-    throw errorThrow(401, 'User does not have permission');
+    throw createExceptionMessage(401, 'Usuário sem permissão.');
   }
   const userByEmail = await getUserByEmail(email);
-  if (userByEmail) throw errorThrow(409, 'User already exists');
-
+  if (userByEmail) throw createExceptionMessage(409, 'Usuário já existe.');
   const cryptoPassword = md5(password);
   const newUser = { name, email, password: cryptoPassword, role };
   const userCreated = await createNewUser(newUser);
@@ -43,10 +42,10 @@ const createNewRegistration = async (userToken, data) => {
 
 const deleteUser = async (userToken, id) => {
   if (!userToken || userToken.payload.role !== 'administrator') {
-    throw errorThrow(401, 'User does not have permission for this operation');
+    throw createExceptionMessage(401, 'Usuário sem permissão.');
   }
   const userById = await getUserById(id);
-  if (!userById) throw errorThrow(404, 'User not found');
+  if (!userById) throw createExceptionMessage(404, 'Usuário não encontrado.');
 
   await User.destroy({ where: { id } });
 };

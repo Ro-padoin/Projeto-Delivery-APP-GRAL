@@ -16,7 +16,6 @@ function DeliveryForm({
           Vendedor:
           {' '}
           <select
-            data-testid="customer_checkout__select-seller"
             name="sellerId"
             id="sellerId"
             value={ sellerId }
@@ -35,7 +34,6 @@ function DeliveryForm({
           </select>
         </label>
         <Input
-          dataTestid="customer_checkout__input-address"
           type="text"
           id="deliveryAddress"
           name="deliveryAddress"
@@ -49,7 +47,6 @@ function DeliveryForm({
           inputClass="input-login"
         />
         <Input
-          dataTestid="customer_checkout__input-addressNumber"
           type="text"
           id="deliveryNumber"
           name="deliveryNumber"

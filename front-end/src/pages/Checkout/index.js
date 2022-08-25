@@ -40,7 +40,7 @@ function Checkout() {
       setCartValue(0);
       localStorage.setItem('cartValue', 0);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -50,7 +50,7 @@ function Checkout() {
         .get('/users/search?role=seller');
       setSellers(data);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -113,17 +113,13 @@ function Checkout() {
           />
           <section className="send-order">
 
-            <Span
-              dataTestid="customer_checkout__element-order-total-price"
-              spanClass="checkout-total"
-            >
+            <Span spanClass="checkout-total">
               Total: R$
               { ' '}
               {cartValue ? cartValueFormat : 0.00}
             </Span>
 
             <Button
-              dataTestid="customer_checkout__button-submit-order"
               onClickfn={ checkDeliveryForm }
               classNameBtn="checkout-button"
             >
@@ -131,7 +127,6 @@ function Checkout() {
             </Button>
           </section>
         </section>
-
       </section>
     </section>
   );

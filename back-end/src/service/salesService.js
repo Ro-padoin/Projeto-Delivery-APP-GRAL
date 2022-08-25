@@ -25,7 +25,7 @@ const getSaleById = async (id, key) => {
   return saleById;
 };
 
-const updateStatus = async (id, key, value) => {
+const updateSaleStatus = async (id, key, value) => {
   const updatedSale = await Sale.update({ status: value }, {
     where: {
       [key]: id,
@@ -34,4 +34,4 @@ const updateStatus = async (id, key, value) => {
   return updatedSale;
 };
 
-module.exports = { createNewSale, getAllSales, getSaleById, updateStatus };
+module.exports = { createNewSale, getAllSales, getSaleById, updateSaleStatus };

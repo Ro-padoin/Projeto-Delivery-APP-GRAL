@@ -69,7 +69,6 @@ function Register() {
       <section className="main-login-form">
         <Input
           type="text"
-          dataTestid="common_register__input-name"
           labelText="Name"
           name="name"
           value={ register.name }
@@ -78,7 +77,6 @@ function Register() {
         />
         <Input
           type="text"
-          dataTestid="common_register__input-email"
           labelText="Email"
           name="email"
           value={ register.email }
@@ -87,7 +85,6 @@ function Register() {
         />
         <Input
           type="password"
-          dataTestid="common_register__input-password"
           labelText="Password"
           name="password"
           value={ register.password }
@@ -95,7 +92,6 @@ function Register() {
           inputClass="input-login"
         />
         <Button
-          dataTestid="common_login__button-login"
           disabled={ isDisabled }
           onClickfn={ handleClickRegister }
           classNameBtn="btn-login"
@@ -105,11 +101,7 @@ function Register() {
 
         { errorDB !== '' && (
           <section>
-            <Span
-              dataTestid="common_register__element-invalid_register"
-            >
-              {errorDB}
-            </Span>
+            <Span>{errorDB}</Span>
           </section>)}
       </section>
     </section>

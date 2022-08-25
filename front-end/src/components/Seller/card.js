@@ -15,29 +15,29 @@ function SellerOrderCard({ id, orderStatus, orderDate, price, orderAddress }) {
     <Link to={ `/seller/orders/${id}` }>
       <section className="seller-card">
         <section className="flex flex-row justify-around items-center w-full">
-          <Span dataTestid={ `seller_orders__element-order-id-${id}` } spanClass="bg-[#F2C12E] p-5 rounded-md">
+          <Span spanClass="bg-[#F2C12E] p-5 rounded-md">
             Pedido
             {' '}
             { id }
           </Span>
-          <Span dataTestid={ `seller_orders__element-delivery-status-${id}` } spanClass={ statusStyle }>
+          <Span spanClass={ statusStyle }>
             { orderStatus }
           </Span>
           <section className="card-date-price">
-            <Span dataTestid={ `seller_orders__element-order-date-${id}` }>
+            <Span>
               { orderDate }
             </Span>
             <Span>
               R$:
               {' '}
-              <Span dataTestid={ `seller_orders__element-card-price-${id}` }>
+              <Span>
                 { price }
               </Span>
             </Span>
           </section>
         </section>
 
-        <Span dataTestid={ `seller_orders__element-card-address-${id}` } spanClass="bg-slate-50 p-1 rounded-md text-center w-full">
+        <Span spanClass="bg-slate-50 p-1 rounded-md text-center w-full">
           { orderAddress}
         </Span>
 

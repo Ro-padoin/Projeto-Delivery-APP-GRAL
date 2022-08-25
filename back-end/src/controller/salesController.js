@@ -29,14 +29,14 @@ const getSaleById = async (req, res, next) => {
   }
 };
 
-const updateStatus = async (req, res, next) => {
+const updateSaleStatus = async (req, res, next) => {
   try {
     const { id, key, value } = req.query;
-    const saleById = await salesService.updateStatus(id, key, value);
+    const saleById = await salesService.updateSaleStatus(id, key, value);
     return res.status(200).json(saleById);
   } catch (error) {
     next(error);
   }
 };
 
-module.exports = { createNewSale, getAllSales, getSaleById, updateStatus };
+module.exports = { createNewSale, getAllSales, getSaleById, updateSaleStatus };

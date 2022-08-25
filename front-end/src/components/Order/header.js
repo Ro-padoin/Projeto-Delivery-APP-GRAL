@@ -7,21 +7,21 @@ import Button from '../Button';
 function OrdersHeader({ orderNum, seller, orderDate, orderStatus }) {
   const { id } = useParams();
   const [btnStatus, setBtnStatus] = useState(orderStatus);
+
   const updateStatus = async (status) => {
     try {
       await axiosInstance
         .patch(`/sales/search?id=${id}&key=id&value=${status}`);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
-  const testid = 'customer_order_details__element-order-details-label-delivery-status';
+
   return (
     <thead>
       <tr>
 
         <th
-          data-testid="customer_order_details__element-order-details-label-order-id"
           className="order-details-header"
         >
           Pedido
@@ -30,7 +30,6 @@ function OrdersHeader({ orderNum, seller, orderDate, orderStatus }) {
         </th>
 
         <th
-          data-testid="customer_order_details__element-order-details-label-seller-name"
           className="order-details-header"
         >
           Vend:
@@ -39,13 +38,11 @@ function OrdersHeader({ orderNum, seller, orderDate, orderStatus }) {
         </th>
 
         <th
-          data-testid="customer_order_details__element-order-details-label-order-date"
           className="order-details-header"
         >
           { orderDate }
         </th>
         <th
-          data-testid={ testid }
           className="order-details-header"
         >
           Status:
@@ -55,7 +52,6 @@ function OrdersHeader({ orderNum, seller, orderDate, orderStatus }) {
 
         <th className="order-details-header">
           <Button
-            dataTestid="customer_order_details__button-delivery-check"
             disabled={ btnStatus !== 'Em Trânsito' }
             onClickfn={ () => {
               setBtnStatus('Entregue');

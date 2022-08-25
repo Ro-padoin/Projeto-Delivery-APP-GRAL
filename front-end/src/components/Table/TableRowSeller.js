@@ -7,36 +7,11 @@ function TableRowSeller(props) {
   return (
     <tbody>
       <tr key={ id } className="table-row">
-        <td
-          data-testid={ `customer_checkout__element-order-table-item-number-${index}` }
-          className="px-2 py-4"
-        >
-          { index + 1 }
-        </td>
-        <td
-          data-testid={ `customer_checkout__element-order-table-name-${index}` }
-          className="px-2 py-4"
-        >
-          {title }
-        </td>
-        <td
-          data-testid={ `customer_checkout__element-order-table-quantity-${index}` }
-          className="px-2 py-4"
-        >
-          { quantity }
-        </td>
-        <td
-          data-testid={ `customer_checkout__element-order-table-unit-price-${index}` }
-          className="px-2 py-4"
-        >
-          { price }
-        </td>
-        <td
-          data-testid={ `customer_checkout__element-order-table-sub-total-${index}` }
-          className="px-2 py-4"
-        >
-          { subTotal}
-        </td>
+        <td className="px-2 py-4">{ index + 1 }</td>
+        <td className="px-2 py-4">{title }</td>
+        <td className="px-2 py-4">{ quantity }</td>
+        <td className="px-2 py-4">{ price }</td>
+        <td className="px-2 py-4">{ subTotal}</td>
       </tr>
     </tbody>
   );

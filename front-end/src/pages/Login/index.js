@@ -87,7 +87,6 @@ function Login() {
             <button
               className="to-register-button"
               type="button"
-              data-testid="common_login__button-register"
               onClick={ () => navigate('/register') }
             >
               Criar nova conta
@@ -96,7 +95,6 @@ function Login() {
         </section>
         <Input
           type="text"
-          dataTestid="common_login__input-email"
           labelText="Email"
           name="email"
           value={ login.email }
@@ -105,7 +103,6 @@ function Login() {
         />
         <Input
           type="password"
-          dataTestid="common_login__input-password"
           labelText="Password"
           name="password"
           value={ login.password }
@@ -113,7 +110,6 @@ function Login() {
           inputClass="input-login"
         />
         <Button
-          dataTestid="common_login__button-login"
           disabled={ isDisabled }
           onClickfn={ handleClickLogin }
           classNameBtn="btn-login"

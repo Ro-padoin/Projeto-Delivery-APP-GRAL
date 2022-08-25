@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Span({ dataTestid, children, spanClass }) {
+function Span({ children, spanClass }) {
   return (
     <span
-      data-testid={ dataTestid }
       className={ spanClass }
     >
       { children }
@@ -13,7 +12,6 @@ function Span({ dataTestid, children, spanClass }) {
 }
 
 Span.propTypes = {
-  dataTestid: PropTypes.string,
   spanClass: PropTypes.string,
 }.isRequired;
 

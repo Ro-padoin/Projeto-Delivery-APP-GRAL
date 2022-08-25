@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 function Button({
   children,
-  dataTestid,
   onClickfn,
   disabled,
   classNameBtn,
@@ -14,7 +13,6 @@ function Button({
     <button
       className={ disabled ? 'button-disabled' : classNameBtn }
       type="button"
-      data-testid={ dataTestid }
       disabled={ disabled || '' }
       onClick={ onClickfn }
     >
@@ -25,7 +23,6 @@ function Button({
 
 Button.propTypes = {
   classNameBtn: PropTypes.string,
-  dataTestid: PropTypes.string,
   disabled: PropTypes.bool,
   onClickfn: PropTypes.func,
 }.isRequired;
