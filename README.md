@@ -1,6 +1,6 @@
 # Projeto App Delivery!
 
-O `App Delivery` é uma plataforma de delivery de cerveja! </br>
+O `App Delivery` é uma plataforma de delivery de cerveja! <br/>
 Esta aplicação recebeu o nome de `GRAL` Delivery, pois se trata de um acrônimo do nome dos integrantes do grupo.
 
 <br/>
@@ -118,10 +118,10 @@ A ideia da sua equipe já pressupõe alguma escalabilidade, dado que foram estab
 
 Desenvolvido em grupo por:
 
-Guilherme Hallmann
-Rosalia Oliveira
-Ariante Ueti
-Lucas Junqueira
+Guilherme Hallmann <br/>
+Rosalia Oliveira <br/>
+Ariante Ueti <br/>
+Lucas Junqueira <br/>
 
 <br/>
 
