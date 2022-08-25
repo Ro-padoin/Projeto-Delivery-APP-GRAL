@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import PropTypes from 'prop-types';
 import React from 'react';
-import Button from '../Button';
+import Button from '../../Button';
 
 function TableRowAdmin(props) {
   const { user, removeUserFn } = props;

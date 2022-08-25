@@ -2,10 +2,10 @@
 /* eslint-disable react/jsx-max-depth */
 import PropTypes from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-import DeliveryContext from '../../utils/context/DeliveryContext';
-import Button from '../Button';
-import Input from '../Input';
-import Span from '../Span';
+import DeliveryContext from '../../../utils/context/DeliveryContext';
+import Button from '../../Button';
+import Input from '../../Input';
+import Span from '../../Span';
 
 function Card(props) {
   const { id, title, price, image } = props;

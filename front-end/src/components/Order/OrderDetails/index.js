@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../../components/Header';
-import OrdersHeader from '../../components/Order/header';
-import Span from '../../components/Span';
-import TableHead from '../../components/Table/TableHead';
-import TableRow from '../../components/Table/TableRowOrder';
-import axiosInstance from '../../utils/axios/axiosInstance';
-import formatDate from '../../utils/helpers/formatDate';
+import Header from '../../Header';
+import Span from '../../Span';
+import TableHead from '../../Table/TableHead';
+import TableRowOrder from '../../Table/TableRowOrder';
+import axiosInstance from '../../../utils/axios/axiosInstance';
+import formatDate from '../../../utils/helpers/formatDate';
+import OrdersHeader from '../OrdersHeader';
 
 function OrderDetails() {
   const [order, setOrder] = useState([]);
@@ -58,7 +58,7 @@ function OrderDetails() {
             products && products.map((product, i) => {
               const priceFormat = `${product.price}`.replace('.', ',');
               return (
-                <TableRow
+                <TableRowOrder
                   key={ i }
                   index={ i }
                   id={ product.id }

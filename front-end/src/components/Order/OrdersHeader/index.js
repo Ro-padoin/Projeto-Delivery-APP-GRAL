@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import axiosInstance from '../../utils/axios/axiosInstance';
-import Button from '../Button';
+import axiosInstance from '../../../utils/axios/axiosInstance';
+import Button from '../../Button';
 
 function OrdersHeader({ orderNum, seller, orderDate, orderStatus }) {
   const { id } = useParams();

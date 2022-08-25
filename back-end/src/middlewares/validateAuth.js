@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
 const { readFileSync } = require('fs');
-const errorThrow = require('../utils/errorThrow');
+const createExceptionMessage = require('../utils/exceptionMessage');
 require('dotenv').config();
 
 const secretKey = readFileSync('jwt.evaluation.key', 'utf8');
-const messageUnauthorized = errorThrow(401, 'Token Not Found');
-const messageInvalidToken = errorThrow(401, 'Expired Or Invalid Token');
+const messageUnauthorized = createExceptionMessage(401, 'Token Not Found');
+const messageInvalidToken = createExceptionMessage(401, 'Expired Or Invalid Token');
 
 const validateAuth = (req, _res, next) => {
     const token = req.headers.authorization;

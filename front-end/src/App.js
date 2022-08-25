@@ -7,9 +7,9 @@ import Products from './pages/Products';
 import DeliveryProvider from './utils/context/DeliveryProvider';
 import Checkout from './pages/Checkout';
 import Order from './pages/Order';
-import OrderDetails from './pages/Order/orderDetails';
+import OrderDetails from './components/Order/OrderDetails';
 import Seller from './pages/Seller';
-import SellerDetails from './pages/Seller/sellerDetails';
+import SellerDetails from './components/Seller/SellerDetails';
 import Management from './pages/Management';
 
 function App() {

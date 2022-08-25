@@ -2,7 +2,7 @@ import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CartBtn from '../../components/CartButton';
 import Header from '../../components/Header';
-import Card from '../../components/Product/card';
+import Card from '../../components/Product/Card';
 import axiosInstance from '../../utils/axios/axiosInstance';
 import DeliveryContext from '../../utils/context/DeliveryContext';
 
@@ -10,6 +10,7 @@ function Products() {
   const { user, cartValue, setCartValue } = useContext(DeliveryContext);
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
+
   const fetchApiAllProducts = useCallback(async (userData) => {
     const config = { headers: { Authorization: userData.token } };
     const { data } = await axiosInstance.get('/products', config);

@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../../components/Header';
-import DeliveryContext from '../../utils/context/DeliveryContext';
-import SallesHeader from '../../components/Seller/header';
-import Span from '../../components/Span';
-import TableRow from '../../components/Table/TableRowSeller';
-import TableHead from '../../components/Table/TableHead';
-import axiosInstance from '../../utils/axios/axiosInstance';
-import formatDate from '../../utils/helpers/formatDate';
+import Header from '../../Header';
+import DeliveryContext from '../../../utils/context/DeliveryContext';
+import SellerHeader from '../Header';
+import Span from '../../Span';
+import TableRow from '../../Table/TableRowSeller';
+import TableHead from '../../Table/TableHead';
+import axiosInstance from '../../../utils/axios/axiosInstance';
+import formatDate from '../../../utils/helpers/formatDate';
 
 function SellerDetails() {
   const { user } = useContext(DeliveryContext);
@@ -43,7 +43,7 @@ function SellerDetails() {
         <table className="table-auto text-center shadow-md">
           {
             sale && sale.map((e) => (
-              <SallesHeader
+              <SellerHeader
                 key={ e.id }
                 id={ e.id }
                 orderNum={ e.id }

@@ -1,9 +1,16 @@
-/* eslint-disable max-len */
 /* eslint-disable react/jsx-max-depth */
+/* eslint-disable max-len */
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import DeliveryContext from '../../utils/context/DeliveryContext';
 import Span from '../Span';
+
+const INITIAL_STATE_SALE = {
+  userId: '',
+  sellerId: '0',
+  deliveryAddress: '',
+  deliveryNumber: '',
+};
 
 function Header() {
   const { user, setUser, setCart, setOrders, setSale } = useContext(DeliveryContext);
@@ -11,12 +18,7 @@ function Header() {
     setUser({});
     setCart([]);
     setOrders([]);
-    setSale({
-      userId: '',
-      sellerId: '0',
-      deliveryAddress: '',
-      deliveryNumber: '',
-    });
+    setSale(INITIAL_STATE_SALE);
     localStorage.clear();
     localStorage.setItem('user', '');
   };
@@ -26,37 +28,38 @@ function Header() {
       <section className="navbar">
         <section className="navbar-elements">
           {user.role === 'customer' && (
-
             <Link
               to="/customer/products"
               className="navbar-link group"
             >
               Produtos
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#F2C12E]" />
+              <span
+                className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#F2C12E]"
+              />
             </Link>
 
           )}
           {user.role === 'customer' && (
-
             <Link
               to="/customer/orders"
               className="navbar-link group"
             >
               Meus Pedidos
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#F2C12E]" />
+              <span
+                className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#F2C12E]"
+              />
             </Link>
-
           )}
           {user.role === 'seller' && (
-
             <Link
               to="/seller/orders"
               className="navbar-link group"
             >
               Meus Pedidos
-              <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#F2C12E]" />
+              <span
+                className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#F2C12E]"
+              />
             </Link>
-
           )}
         </section>
         <section className="navbar-elements">
@@ -64,7 +67,11 @@ function Header() {
             spanClass="navbar-name"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
             </svg>
             {user.name}
           </Span>
@@ -75,7 +82,11 @@ function Header() {
           >
             Sair
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+              />
             </svg>
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#F2C12E]" />
           </Link>

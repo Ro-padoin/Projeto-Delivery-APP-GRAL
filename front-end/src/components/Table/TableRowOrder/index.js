@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
-import DeliveryContext from '../../utils/context/DeliveryContext';
-import Button from '../Button';
+import DeliveryContext from '../../../utils/context/DeliveryContext';
+import Button from '../../Button';
 
-function TableRow(props) {
+function TableRowOrder(props) {
   const { index, id, title, quantity, price, subTotal, showRemoveBtn } = props;
   const { updateCartItem } = useContext(DeliveryContext);
 
@@ -51,7 +51,7 @@ function TableRow(props) {
   );
 }
 
-TableRow.propTypes = {
+TableRowOrder.propTypes = {
   index: PropTypes.number,
   id: PropTypes.number,
   title: PropTypes.string,
@@ -60,4 +60,4 @@ TableRow.propTypes = {
   subTotal: PropTypes.string,
 }.isRequired;
 
-export default TableRow;
+export default TableRowOrder;
